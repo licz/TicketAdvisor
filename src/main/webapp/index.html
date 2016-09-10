@@ -1,0 +1,43 @@
+<html ng-app="TicketAdvisor">
+<head>
+    <!-- Latest compiled and minified Angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <!-- app scripts -->
+    <script src="services.js"></script>
+    <script src="indexController.js"></script>
+
+</head>
+<body ng-controller="MainController">
+
+<h3>
+    TicketAdvisor
+</h3>
+
+<div>
+    Link:
+    <input type="text" ng-model="ticketToAdd.link">
+    Ticket:
+    <input type="text" ng-model="ticketToAdd.ticket">
+    Email:
+    <input type="text" ng-model="ticketToAdd.email">
+    <button ng-click="addTicket()">Add Ticket</button>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <th>Link</th>
+            <th>Ticket</th>
+            <th>Email</th>
+        </tr>
+        <tr ng-repeat="ticket in ticketRequests">
+            <th>{{ticket.link}}</th>
+            <th>{{ticket.ticket}}</th>
+            <th>{{ticket.email}}</th>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

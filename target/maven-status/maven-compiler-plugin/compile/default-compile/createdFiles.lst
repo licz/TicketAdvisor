@@ -1,0 +1,11 @@
+com/lich/ticketAdvisor/db/entities/Ticket.class
+com/lich/ticketAdvisor/db/entities/TicketRequest.class
+com/lich/ticketAdvisor/services/TicketService.class
+com/lich/ticketAdvisor/utils/PageReader.class
+com/lich/ticketAdvisor/Main.class
+com/lich/ticketAdvisor/db/entities/Email.class
+com/lich/ticketAdvisor/db/repositories/TicketRepository.class
+com/lich/ticketAdvisor/utils/TicketFinder.class
+com/lich/ticketAdvisor/controller/TicketController.class
+com/lich/ticketAdvisor/utils/EmailSender.class
+com/lich/ticketAdvisor/utils/Processor.class
