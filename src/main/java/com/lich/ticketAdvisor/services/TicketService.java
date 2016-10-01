@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class TicketService {
     @Autowired
-    public TicketService (TicketRepository ticketRepository) {
+    public TicketService(TicketRepository ticketRepository) {
         this.ticketRepository = ticketRepository;
     }
 

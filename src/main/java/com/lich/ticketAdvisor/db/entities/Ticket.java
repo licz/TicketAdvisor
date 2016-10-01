@@ -1,11 +1,9 @@
 package com.lich.ticketAdvisor.db.entities;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
 
 /**
  * Created by leszek.sosnowski on 19/08/2016.
@@ -15,22 +13,16 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
     private Long id;
 
-    @Column
     private String link;
 
-    @Column
     private String ticket;
 
-    @Column
     private String email;
 
-    @Column
     private boolean emailSent;
 
-    @Column
     private boolean ticketFound;
 
     public Ticket() {
@@ -48,6 +40,54 @@ public class Ticket {
         this.ticket = ticket;
         this.email = email;
         this.emailSent = emailSent;
+        this.ticketFound = ticketFound;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(String ticket) {
+        this.ticket = ticket;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public boolean isEmailSent() {
+        return emailSent;
+    }
+
+    public void setEmailSent(boolean emailSent) {
+        this.emailSent = emailSent;
+    }
+
+    public boolean isTicketFound() {
+        return ticketFound;
+    }
+
+    public void setTicketFound(boolean ticketFound) {
         this.ticketFound = ticketFound;
     }
 }
