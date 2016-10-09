@@ -1,7 +1,6 @@
 package com.lich.ticketAdvisor.utils.notifier;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
