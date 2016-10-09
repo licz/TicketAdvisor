@@ -21,8 +21,6 @@ public class Ticket {
 
     private String email;
 
-    private boolean emailSent;
-
     private boolean ticketFound;
 
     public Ticket() {
@@ -35,11 +33,10 @@ public class Ticket {
         this.email = email;
     }
 
-    public Ticket(String link, String ticket, String email, boolean emailSent, boolean ticketFound) {
+    public Ticket(String link, String ticket, String email, boolean ticketFound) {
         this.link = link;
         this.ticket = ticket;
         this.email = email;
-        this.emailSent = emailSent;
         this.ticketFound = ticketFound;
     }
 
@@ -73,14 +70,6 @@ public class Ticket {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public boolean isEmailSent() {
-        return emailSent;
-    }
-
-    public void setEmailSent(boolean emailSent) {
-        this.emailSent = emailSent;
     }
 
     public boolean isTicketFound() {

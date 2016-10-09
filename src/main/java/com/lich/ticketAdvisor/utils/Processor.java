@@ -6,7 +6,6 @@ import com.lich.ticketAdvisor.db.repositories.TicketRepository;
 import com.lich.ticketAdvisor.utils.crawler.Crawler;
 import com.lich.ticketAdvisor.utils.notifier.Notifier;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -20,6 +19,8 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 public class Processor implements Runnable {
+
+    public static final boolean TICKET_NOT_FOUND = false;
 
     @Autowired
     public Processor(Crawler crawler, Notifier notifier, TicketRepository ticketRepository) {
@@ -40,19 +41,14 @@ public class Processor implements Runnable {
 
     @Override
     public void run() {
-        Iterable<Ticket> iterator = ticketRepository.findAll();
+        Iterable<Ticket> iterator = ticketRepository.findByTicketFound(TICKET_NOT_FOUND);
         List<Ticket> ticketList = new ArrayList<>();
         iterator.forEach(ticketList::add);
 
         for (Ticket ticket: ticketList) {
-            boolean ticketFound = false;
-            if (!ticket.isTicketFound()) {
-                ticketFound = crawler.isTicketAvailable(ticket);
-            }
-
+            boolean ticketFound = crawler.isTicketAvailable(ticket);
             if (ticketFound) {
                 notifier.notify(ticket.getEmail(), ticket.getLink(), ticket.getTicket());
-                ticket.setEmailSent(true);
                 ticket.setTicketFound(true);
             }
         }

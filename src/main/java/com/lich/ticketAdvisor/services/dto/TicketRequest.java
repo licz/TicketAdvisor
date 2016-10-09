@@ -1,4 +1,4 @@
-package com.lich.ticketAdvisor.db.entities;
+package com.lich.ticketAdvisor.services.dto;
 
 /**
  * Created by leszek.sosnowski on 19/08/2016.

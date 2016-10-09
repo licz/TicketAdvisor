@@ -1,7 +1,7 @@
 package com.lich.ticketAdvisor.controller;
 
 import com.lich.ticketAdvisor.db.entities.Ticket;
-import com.lich.ticketAdvisor.db.entities.TicketRequest;
+import com.lich.ticketAdvisor.services.dto.TicketRequest;
 import com.lich.ticketAdvisor.services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
